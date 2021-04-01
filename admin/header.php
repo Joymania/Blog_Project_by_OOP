@@ -1,9 +1,15 @@
 <?php
+
     session_start();
-    if(!isset($_SESSION['email'])){
+    if (! isset ( $_SESSION['email']) ) {
         header('location:login.php');
     
     }
+    $url= $_SERVER['PHP_SELF'];
+    $url=explode('/',$url);
+    $url=end($url);
+    
+   
 
 ?>
 
@@ -265,7 +271,7 @@
                     <li class="dropdown">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                             <img alt="" src="img/avatar1_small.jpg">
-                            <span class="username">Jhon Doue</span>
+                            <span class="username"><?php echo $_SESSION['name'] ?></span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu extended logout dropdown-menu-right">

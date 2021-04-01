@@ -14,6 +14,7 @@ class login{
           session_start();
           $_SESSION['id']=$row['id'];
           $_SESSION['email']=$row['email'];
+          $_SESSION['name']=$row['name'];
           header('location:index.php');
       }
       else{
