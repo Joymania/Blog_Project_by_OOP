@@ -1,4 +1,5 @@
 <?php
+ob_start();
 
     session_start();
     if (! isset ( $_SESSION['email']) ) {
@@ -41,6 +42,11 @@
 
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet" />
+
+     <!--dynamic table-->
+     <link href="assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+    <link href="assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/data-tables/DT_bootstrap.css" />
 
   </head>
 
@@ -282,9 +288,9 @@
                             <li><a href="logout.php"><i class="fa fa-key"></i> Log Out</a></li>
                         </ul>
                     </li>
-                    <li class="sb-toggle-right">
+                    <!-- <li class="sb-toggle-right">
                         <i class="fa  fa-align-right"></i>
-                    </li>
+                    </li> -->
                     <!-- user login dropdown end -->
                 </ul>
                 <!--search & user info end-->

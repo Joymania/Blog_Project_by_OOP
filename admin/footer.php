@@ -21,6 +21,10 @@
     <script src="js/owl.carousel.js" ></script>
     <script src="js/jquery.customSelect.min.js" ></script>
     <script src="js/respond.min.js" ></script>
+    <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+     <!--dynamic table initialization -->
+     <script src="js/dynamic_table_init.js"></script>
 
     <!--right slidebar-->
     <script src="js/slidebars.min.js"></script>
