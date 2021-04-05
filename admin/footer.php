@@ -23,6 +23,26 @@
     <script src="js/respond.min.js" ></script>
     <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
     <script type="text/javascript" src="assets/data-tables/DT_bootstrap.js"></script>
+    <!-- <script src="assets/summernote/dist/summernote.min.js"></script>
+    <script>
+
+jQuery(document).ready(function(){
+
+    $('.summernote').summernote({
+        height: 200,                 // set editor height
+
+        minHeight: null,             // set minimum height of editor
+        maxHeight: null,             // set maximum height of editor
+
+        focus: true                 // set focus to editable area after initializing summernote
+    });
+});
+
+</script> -->
+<script src="https://cdn.ckeditor.com/4.13.0/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'editor' );
+</script>
      <!--dynamic table initialization -->
      <script src="js/dynamic_table_init.js"></script>
 
@@ -36,6 +56,8 @@
     <script src="js/sparkline-chart.js"></script>
     <script src="js/easy-pie-chart.js"></script>
     <script src="js/count.js"></script>
+
+   
 
   <script>
 
