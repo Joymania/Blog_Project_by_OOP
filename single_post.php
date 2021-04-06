@@ -8,6 +8,14 @@
   $blog=new App\classes\blog();
   $blog_post=$blog->single_post($id);
   $row=mysqli_fetch_assoc($blog_post);
+  $comment=new App\classes\comment();
+
+
+  if(isset($_POST['submit'])){
+      $comment->insert($_POST);  
+  }
+  $all_comment=$comment->show_comment($id);
+
 
 ?>
 
@@ -111,26 +119,32 @@
         <div class="card my-4">
           <h5 class="card-header">Leave a Comment:</h5>
           <div class="card-body">
-            <form>
+            <form action="" method="POST">
               <div class="form-group">
-                <textarea class="form-control" rows="3"></textarea>
+                  <input type="hidden" name="id" value="<?= $id ?>">
+                <textarea class="form-control" rows="3" name="comment" ></textarea>
               </div>
-              <button type="submit"  class="btn btn-primary">Submit</button>
+              <button type="submit" name="submit" class="btn btn-primary">Submit</button>
             </form>
           </div>
         </div>
 
         <!-- Single Comment -->
+        <?php
+            while($row2=mysqli_fetch_assoc($all_comment)){
+
+        ?>
         <div class="media mb-4">
-          <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+          <img class="d-flex mr-3 rounded-circle" src="uploads/<?= $row['photo'] ?>" width="50px" height="50px" alt="">
           <div class="media-body">
-            <h5 class="mt-0">Commenter Name</h5>
-            Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+            <h5 class="mt-0"><?= $_SESSION['name'] ?></h5>
+            <?= $row2['comment'] ?>
           </div>
         </div>
+        <?php } ?>
 
         <!-- Comment with nested comments -->
-        <div class="media mb-4">
+        <!-- <div class="media mb-4">
           <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
           <div class="media-body">
             <h5 class="mt-0">Commenter Name</h5>
@@ -153,7 +167,7 @@
             </div>
 
           </div>
-        </div>
+        </div> -->
 
       </div>
 
