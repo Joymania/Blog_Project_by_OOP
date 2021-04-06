@@ -18,6 +18,11 @@ class category{
 
 
     }
+    public function active_category(){
+        $querry="SELECT  `category_name`  FROM `category` WHERE `status`=1";
+        $result=mysqli_query(database::con(),$querry);
+        return $result;
+    }
 
     public function all_category(){
         $querry="SELECT * FROM `category`";

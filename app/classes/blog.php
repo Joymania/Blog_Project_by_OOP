@@ -26,6 +26,17 @@ class blog{
            return $success='Data Inserted Successfully.';
         }
     }
+    public function active_blog(){
+        $querry="SELECT * FROM `blog` WHERE `status`=1";
+        $result=mysqli_query(database::con(),$querry);
+        return $result;
+    }
+
+    public function single_post($id){
+        $querry="SELECT * FROM `blog` WHERE `id`='$id'";
+        $result=mysqli_query(database::con(),$querry);
+        return $result;
+    }
 
     public function all_blog(){
         $querry="SELECT `blog`.`title`,`blog`.`id`,`blog`.`content`,`blog`.`photo`,`blog`.`name`,`blog`.`status`,`category`.`category_name`
